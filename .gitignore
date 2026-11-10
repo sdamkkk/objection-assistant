@@ -7,3 +7,4 @@ dist-skills/
 *.log
 .DS_Store
 __pycache__/
+runs/
