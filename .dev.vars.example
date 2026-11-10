@@ -1,0 +1,5 @@
+# 本地运行 wrangler dev 时使用：复制为 .dev.vars 并填入真实值（.dev.vars 不会提交到 git）
+DEEPSEEK_API_KEY=sk-xxxx
+# ACCESS_CODE=demo
+# 用本地模拟的 DeepSeek 测试时取消下一行的注释（先运行 node scripts/mock-deepseek.mjs 9999）
+# DEEPSEEK_BASE_URL=http://localhost:9999

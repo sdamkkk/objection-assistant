@@ -1,0 +1,9 @@
+node_modules/
+dist/
+public/pdfjs/
+dist-skills/
+.wrangler/
+.dev.vars
+*.log
+.DS_Store
+__pycache__/

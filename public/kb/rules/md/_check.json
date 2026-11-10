@@ -1,0 +1,75 @@
+{
+ "R01": {
+  "chars": 6920,
+  "verified": 6869,
+  "ratio": 0.9926,
+  "unmatched": [
+   "公开募集证券投资基金信息披露管理办法（根据2020年3月20日《关于修改部分证券期货规章的决定》修正）"
+  ]
+ },
+ "R02": {
+  "chars": 1983,
+  "verified": 1983,
+  "ratio": 1.0,
+  "unmatched": []
+ },
+ "R03": {
+  "chars": 9435,
+  "verified": 9435,
+  "ratio": 1.0,
+  "unmatched": []
+ },
+ "R04": {
+  "chars": 7705,
+  "verified": 7705,
+  "ratio": 1.0,
+  "unmatched": []
+ },
+ "R05": {
+  "chars": 2559,
+  "verified": 2559,
+  "ratio": 1.0,
+  "unmatched": []
+ },
+ "R06": {
+  "chars": 12355,
+  "verified": 12355,
+  "ratio": 1.0,
+  "unmatched": []
+ },
+ "R07": {
+  "chars": 4106,
+  "verified": 4106,
+  "ratio": 1.0,
+  "unmatched": []
+ },
+ "R08": {
+  "chars": 4331,
+  "verified": 4272,
+  "ratio": 0.9864,
+  "unmatched": [
+   "第一章总则",
+   "第一条",
+   "第二条",
+   "第三条",
+   "第四条",
+   "第六条",
+   "第七条",
+   "第十条",
+   "第十一条",
+   "第十二条",
+   "第十三条",
+   "第十四条",
+   "第十八条",
+   "第十九条",
+   "第二十条",
+   "第二十一条"
+  ]
+ },
+ "R09": {
+  "chars": 2134,
+  "verified": 2134,
+  "ratio": 1.0,
+  "unmatched": []
+ }
+}

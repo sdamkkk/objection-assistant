@@ -1,0 +1,29 @@
+# Cloudflare Workers 配置（Worker + 静态资源）。
+# 密钥 DEEPSEEK_API_KEY（以及可选的 ACCESS_CODE）请在 Worker 的 Settings → Variables and Secrets 里设置，不要写在这里。
+name = "objection-assistant"
+main = "src/worker.ts"
+compatibility_date = "2026-09-01"
+
+# wrangler deploy 时先构建前端，生成 dist/
+[build]
+command = "npm run build"
+
+[assets]
+directory = "./dist"
+binding = "ASSETS"
+not_found_handling = "single-page-application"
+run_worker_first = ["/api/*"]
+
+# Workers AI：检索时把问题转成向量（bge-m3）。没有这项绑定时，检索自动退回只用 BM25。
+[ai]
+binding = "AI"
+
+[vars]
+DEEPSEEK_MODEL = "deepseek-flash"
+OPS_THINKING = "enabled"
+OPS_EFFORT = "high"
+REVIEW_THINKING = "enabled"
+REVIEW_EFFORT = "high"
+
+[observability]
+enabled = true

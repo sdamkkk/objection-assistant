@@ -1,0 +1,39 @@
+{
+  "name": "objection-assistant",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "客户异议应答助手：应答 agent + 检查 agent，运行在 Cloudflare 上，模型使用 DeepSeek。",
+  "engines": {
+    "node": ">=22.18"
+  },
+  "scripts": {
+    "knowledge": "node scripts/build-knowledge.mjs",
+    "dev": "npm run knowledge && npm run assets && vite",
+    "build": "npm run knowledge && npm run assets && tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "typecheck": "npm run knowledge && tsc --noEmit",
+    "test": "npm run knowledge && node --test \"tests/**/*.test.ts\"",
+    "skills:package": "node scripts/package-skills.mjs",
+    "assets": "node scripts/copy-pdf-assets.mjs",
+    "library": "node scripts/build-library.ts rules"
+  },
+  "dependencies": {
+    "docx": "9.11.0",
+    "marked": "15.0.12",
+    "pdfjs-dist": "5.7.284",
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "4.3.3",
+    "@types/node": "22.20.5",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@vitejs/plugin-react": "5.2.0",
+    "tailwindcss": "4.3.3",
+    "typescript": "5.9.3",
+    "vite": "7.3.7",
+    "wrangler": "4.149.0"
+  }
+}
