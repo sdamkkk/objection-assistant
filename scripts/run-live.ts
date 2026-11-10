@@ -1,7 +1,7 @@
 // 在命令行里对已部署的站点实跑一个示例案例（引擎和浏览器里的是同一套代码），保存运行记录和结果。
 // 用法：node scripts/run-live.ts <站点地址> [示例编号=q1] [输出目录=runs] [应答要求]
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
-import { dirname, join } from 'node:path';
+import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { Session } from '../src/core/engine.ts';
 import { createHttpModel } from '../src/core/http-model.ts';
@@ -46,7 +46,7 @@ try {
   console.error('中断：', error);
 }
 const state = { id: `run-${startedAt}`, status: outcome ? 'done' : 'error', noticeTitle: notice.label, noticeText: notice.text, requests: [request], timeline, rounds: [...session.rounds], toolLog: [...session.toolLog], outcome, error, startedAt, finishedAt: Date.now() } as const;
-mkdirSync(join(root, outDir), { recursive: true });
+mkdirSync(resolve(root, outDir), { recursive: true });
 const stamp = new Date(startedAt).toISOString().slice(0, 16).replace(/[-:T]/g, '');
 writeFileSync(join(root, outDir, `${id}-${stamp}.md`), toRunRecord(state as never, { model: cfg.ops.model, thinking: cfg.ops.thinking }));
 writeFileSync(join(root, outDir, `${id}-${stamp}.json`), JSON.stringify({ request, caseText: notice.text, outcome, rounds: session.rounds, toolLog: session.toolLog, timeline }, null, 1));
